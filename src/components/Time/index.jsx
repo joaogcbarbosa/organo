@@ -1,0 +1,17 @@
+import "./Time.css"
+
+const Time = (props) => {
+
+    const css = {
+        corPrimaria: props.corPrimaria,
+        corSecundaria: props.corSecundaria,
+    }
+
+    return (
+        <section className="time" style={ {backgroundColor: css.corSecundaria} }>
+            <h3 style={ {borderColor: css.corPrimaria} }>{props.nome}</h3>
+        </section>
+    )
+}
+
+export default Time;
