@@ -1,0 +1,17 @@
+.rodape {
+    background-color: #6278F7;
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rodape .midia {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.rodape .midia img {
+    max-width: 50%;
+    max-height: 50%;
+}
