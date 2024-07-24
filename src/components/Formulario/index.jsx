@@ -10,6 +10,7 @@ const Formulario = ( {times, aoCadastrarColaborador} ) => {
     const [cargo, setCargo] = useState("")
     const [imagem, setImagem] = useState("")
     const [time, setTime] = useState("")
+    const colaboradorAttrs = [setNome, setCargo, setImagem, setTime]
     
     const aoSalvar = (evento) => {
         evento.preventDefault();
@@ -21,8 +22,7 @@ const Formulario = ( {times, aoCadastrarColaborador} ) => {
                 time
             }
         )
-
-        // chamar o axios para fazer o POST aqui
+        colaboradorAttrs.map(c => c(""))
     }
 
     return (
