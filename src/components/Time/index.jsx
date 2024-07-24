@@ -2,15 +2,10 @@ import Colaborador from "../Colaborador";
 import "./Time.css";
 
 const Time = ( {nome, colaboradores, corPrimaria, corSecundaria, aoDeletar} ) => {
-  const css = {
-    corPrimaria: corPrimaria,
-    corSecundaria: corSecundaria,
-  };
-
   return (
     colaboradores.length > 0 && (
-      <section className="time" style={{ backgroundColor: css.corSecundaria }}>
-        <h3 style={{ borderColor: css.corPrimaria }}>{nome}</h3>
+      <section className="time" style={{ backgroundColor: corSecundaria }}>
+        <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
         <div className="colaboradores">
           {colaboradores.map((colaborador) => (
             <Colaborador
@@ -18,7 +13,7 @@ const Time = ( {nome, colaboradores, corPrimaria, corSecundaria, aoDeletar} ) =>
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}
-              corPrimaria={css.corPrimaria}
+              corPrimaria={corPrimaria}
               aoDeletar={aoDeletar}
             />
           ))}
