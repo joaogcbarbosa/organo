@@ -5,6 +5,7 @@ const ListaSuspensa = ( {label, valor, obrigatorio, itens, aoAlterar} ) => {
         <div className="lista-suspensa">
             <label>{label}</label>
             <select name="areas" id="areas" required={obrigatorio} value={valor} onChange={(e) => aoAlterar(e.target.value)}>
+                <option value=""></option>
                 {itens.map((i => <option key={i}>{i}</option>))}
             </select>
         </div>
