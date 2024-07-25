@@ -1,10 +1,10 @@
 import "./Campo.css"
 
-const Campo = ( {label, valor, obrigatorio, placeholder, aoAlterar} ) => {
+const Campo = ( {type="text", label, valor, obrigatorio, placeholder, aoAlterar} ) => {
     return (
-        <div className="campo">
+        <div className={`campo-${type}`}>
             <label>{label}</label>
-            <input value={valor} onChange={(e) => aoAlterar(e.target.value)} required={obrigatorio} placeholder={placeholder}/>
+            <input type={type} value={valor} onChange={(e) => aoAlterar(e.target.value)} required={obrigatorio} placeholder={placeholder}/>
         </div>
     )
 }
