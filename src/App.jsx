@@ -44,6 +44,10 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   };
 
+  const cadastraNovoTime = (time) => {
+    setTime([...times, time]);
+  };
+
   const deletarColaborador = (id) => {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   };
@@ -62,6 +66,7 @@ function App() {
       <Banner />
       <Formulario
         aoCadastrarColaborador={cadastraNovoColaborador}
+        aoCadastrarTime={cadastraNovoTime}
         times={times.map((time) => time.nome)}
       />
       {times.map((time) => (
