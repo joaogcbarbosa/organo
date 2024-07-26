@@ -25,7 +25,8 @@ const Formulario = ( {times, aoCadastrarColaborador, aoCadastrarTime} ) => {
                 nome,
                 cargo,
                 imagem,
-                time
+                time,
+                favorito: false
             }
         )
         colaboradorAttrs.map(c => c(""))
