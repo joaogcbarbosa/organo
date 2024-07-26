@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Banner from "./components/Banner";
 import Formulario from "./components/Formulario";
 import Time from "./components/Time";
 import Rodape from "./components/Rodape";
 import { v4 as uuidv4 } from 'uuid';
+
+const REACT_APP_API_URL = "http://localhost:8080/colaboradores"
 
 function App() {
   const [times, setTime] = useState([
@@ -39,6 +41,12 @@ function App() {
   ]);
 
   const [colaboradores, setColaboradores] = useState([]);
+
+  useEffect(() => {
+    fetch(REACT_APP_API_URL)
+      .then(response => response.json())
+      .then(dados => setColaboradores(dados))
+  }, [])
 
   const cadastraNovoColaborador = (colaborador) => {
     setColaboradores([...colaboradores, colaborador]);
