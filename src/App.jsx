@@ -49,7 +49,16 @@ function App() {
   };
 
   const deletarColaborador = (id) => {
-    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
+  };
+
+  const favoritarColaborador = (id) => {
+    setColaboradores(colaboradores.map(colaborador => {
+      if (colaborador.id === id) {
+        colaborador.favorito = !colaborador.favorito;
+      }
+      return colaborador;
+    }))
   };
 
   const mudarCorTime = (nome, cor) => {
@@ -79,6 +88,7 @@ function App() {
           )}
           aoDeletar={deletarColaborador}
           aoMudarCor={mudarCorTime}
+          aoFavoritar={favoritarColaborador}
         />
       ))}
       <Rodape />
