@@ -1,16 +1,20 @@
+import { useContext } from "react";
 import "./Colaborador.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
+import { ColaboradorContext } from "../../context/ColaboradorContext";
 
-const Colaborador = ( {id, nome, cargo, imagem, favorito, corPrimaria, aoDeletar, aoFavoritar} ) => {
+const Colaborador = ( {id, nome, cargo, imagem, favorito, corPrimaria} ) => {
+
+  const { favoritarColaborador, deletarColaborador } = useContext(ColaboradorContext)
   
   const favoritar = () => {
-    aoFavoritar(id)
+    favoritarColaborador(id)
   }
 
   return (
     <div className="colaborador">
-      <AiFillCloseCircle className="deletar" onClick={() => aoDeletar(id)} size={25}/>
+      <AiFillCloseCircle className="deletar" onClick={() => deletarColaborador(id)} size={25}/>
       <div className="cabecalho" style={{ backgroundColor: corPrimaria }}>
         <img src={imagem} alt={nome} />
       </div>
