@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 const Organo = () => {
   const REACT_APP_API_URL = "http://localhost:8080/colaboradores";
 
-  const [times, setTime] = useState([
+  const [times, setTimes] = useState([
     { id: uuidv4(), nome: "Programação", cor: "#57C278" },
     { id: uuidv4(), nome: "Front-End", cor: "#82CFFA" },
     { id: uuidv4(), nome: "Data Science", cor: "#A6D157" },
@@ -31,7 +31,7 @@ const Organo = () => {
   };
 
   const cadastraNovoTime = (time) => {
-    setTime([...times, time]);
+    setTimes([...times, time]);
   };
 
   const deletarColaborador = (id) => {
@@ -52,7 +52,7 @@ const Organo = () => {
   };
 
   const mudarCorTime = (nome, cor) => {
-    setTime(
+    setTimes(
       times.map((time) => {
         if (time.nome === nome) {
           time.cor = cor;
