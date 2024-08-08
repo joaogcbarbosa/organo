@@ -3,9 +3,16 @@ import Colaborador from "../Colaborador";
 import "./Time.css";
 import hexToRgba from 'hex-to-rgba';
 import { TimeContext } from "../../context/TimeContext";
+import { ColaboradorContext } from "../../context/ColaboradorContext";
 
-const Time = ( {nome, cor, colaboradores} ) => {
+const Time = ( {nome, cor} ) => {
+
+  let { colaboradores } = useContext(ColaboradorContext)
   const { mudarCorTime } = useContext(TimeContext)
+
+  colaboradores = colaboradores.filter(
+    (colaborador) => colaborador.time === nome
+  )
 
   return (
     colaboradores.length > 0 ? (
