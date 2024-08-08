@@ -4,11 +4,11 @@ import "./Time.css";
 import hexToRgba from 'hex-to-rgba';
 import { TimeContext } from "../../context/TimeContext";
 
-const Time = ( {nome, colaboradores, cor} ) => {
+const Time = ( {nome, cor, colaboradores} ) => {
   const { mudarCorTime } = useContext(TimeContext)
 
   return (
-    colaboradores.length > 0 && (
+    colaboradores.length > 0 ? (
       <section className="time" style={{ backgroundColor: hexToRgba(cor, "0.55") }}>
         <h3 style={{ borderColor: cor }}>{nome}</h3>
         <input value={cor} onChange={(e) => mudarCorTime(nome, e.target.value)} type="color" className="input-color" />
@@ -26,7 +26,7 @@ const Time = ( {nome, colaboradores, cor} ) => {
           ))}
         </div>
       </section>
-    )
+    ) : ""
   );
 };
 
